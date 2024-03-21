@@ -1,0 +1,31 @@
+<div class="tests_list">
+
+    <ul class="ul_list_category">
+
+        <% @categories.each do |category| %>
+            <li>
+                <br/>
+                <div class="category_name">
+                   <label><%= category.name%></label> 
+                </div>
+                <div class="pass_test">
+                    <%= link_to "Изменить", edit_category_path(category) %>
+                </div>
+                <% if @products.where(category_id: category.id).count == 0%>
+                    <div class="delete_test">
+                        <%= button_to "Удалить", category, method:"delete", class: "button_delete"%>
+                    </div>
+                <% else %>
+                    <div class="delete_non_test">
+                        <%= button_to "Удалить", category, method:"delete", class: "button_delete"%>
+                    </div></br>
+                    <div class="warning">
+                        <label>Удаление невозможно, потому что имеются продукты, привязанные к категории!</label> 
+                    </div>
+                <% end %>
+                <br/>
+            </li><br/>
+        <% end %>
+
+    </ul>
+</div>

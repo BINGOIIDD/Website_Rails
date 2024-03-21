@@ -1,0 +1,10 @@
+<div class="new_test_name">
+    <%= form_with(model: @test) do |form| %>
+        <%= form.label :test_name, "Введите название теста"%></br></br>
+        <%= form.text_field :test_name, :require => true, class: "input_name"%> </br></br>
+
+        <%= form.hidden_field :user_id, value: current_user.id%>
+
+        <%= form.submit "Сохранить", class: "btnForm"%>
+    <% end %>
+</div>

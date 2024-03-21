@@ -1,0 +1,50 @@
+<div class="tests_list">
+
+    <h2>Ваши тесты</h2>
+
+    <div class="tests_func">
+
+        <%= search_form_for @q do |f|%>
+            <%= f.search_field :test_name_cont, class: "search_row"%>
+            <%= f.submit "Поиск", class: "but_search" %>
+        <% end %>
+
+        <div class="add_new_test_div">
+            <%= link_to "Добавить свой тест", test_lists_new_path %>
+        </div>
+
+    </div>
+
+    <ul class="ul_list_tests">
+
+        <% @tests.each do |test| %>
+            <li>
+                <br/>
+                <div class="test_name">
+                   <label><%= test.test_name%></label> 
+                </div>
+                <% if @questions.where(test_list_id: test.id).count == 10%>
+                <div class="pass_test">
+                    <%= link_to "Пройти", test_results_new_path(test_id: test.id) %>
+                </div>
+                <div class="top_test">
+                    <%= link_to "Топ", test_results_index_path(test_id: test.id) %>
+                </div>
+                <% else %>
+                <div class="create_questions_test">
+                    <%= link_to "Продолжить создание теста", test_questions_new_path(test_id: test.id)%>
+                </div>
+                <% end %>
+                <div class="delete_test">
+                    <%= button_to "Удалить", test, method:"delete", class: "button_delete"%>
+                </div>
+                <br/>
+            </li><br/>
+            
+        <% end %>
+
+    </ul>
+    <div class="pagin">
+        <%= will_paginate @tests, :previous_label => "Назад", :next_label => "Вперёд" %>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Лабораторная работа №2</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      <nav class="navbar">
+          <%= link_to "Имеющийся товар", products_path, class: "link_nav"%>
+          <% if user_signed_in? %>
+            <%= link_to "Новый продукт", new_product_path, class: "link_nav"%>
+            <%= link_to "Новая категория", new_category_path, class: "link_nav"%>
+            <%= link_to "Тесты", test_lists_path, class: "link_nav"%>
+            <% if current_user.admin? or current_user.moder? %>
+              <%= link_to "Админ", admin_place_main_path, class: "link_nav"%>
+            <% end %>
+            <div class="account_inf">
+              <span>Здравствуйте, <%= current_user.name %></span>
+              <%= link_to 'Ваши товары', users_index_product_path%>
+              <%= link_to 'Ваши отзывы', users_index_review_path%>
+              <%= link_to 'Ваши тесты', users_index_test_path%>
+              <%= link_to 'Выйти', destroy_user_session_path, :method => :destroy %>
+            </div>
+          <% else %>
+              <%= link_to "Войти", user_session_path, class: "link_nav_sign_in"%>
+          <% end %>
+
+      </nav>
+
+
+    <%= yield %>
+    
+  </body>
+</html>

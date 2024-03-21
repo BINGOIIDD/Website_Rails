@@ -1,0 +1,110 @@
+<div class="div_show">
+    <h1 id="h_show"><%= @product.name %></h1>
+
+    <div class="seller_label">
+        <label >Продавец: <%= @users.find(@product.user_id).name %></label>
+    </div>
+    
+    <div class="category_label">
+        <% if @product.category_id.present? %>
+            <label>Категория: <%= @categories.find(@product.category_id).name %></label>
+        <% end %> 
+    </div></br>
+    
+    <div class="desc_label">
+        <label>Описание</label>
+        <p id="description_show" ><%= @product.description%></p>
+    </div>
+
+    <div class="price_label">
+        <label>Цена: <%= @product.price%></label>
+    </div>
+    
+    <%if user_signed_in? && (current_user.id == @product.user_id || current_user.admin? || current_user.moder?)%>
+    
+        <div class="div_button">
+            <%= link_to "Изменить информацию", edit_product_path(@product), class:"link"%>
+        </div>
+        <br/>
+        <%= button_to "Удалить", @product , method:"delete", class: "btnForm"%>
+
+    <% end %>
+</div>
+
+<div class="reviews_show">
+    
+    <h2> Отзывы </h2>
+    <% @product.reviews.each do |product| %>
+
+        <div class="review_all">
+            <p>
+                <strong>Автор:</strong>
+                <%= @users.find(product.user_id).name %>
+            </p>
+
+            <p>
+                <strong>Достоинства:</strong>
+                <%= product.degnities %>
+            </p>
+
+            <p>
+                <strong>Недостатки:</strong>
+                <%= product.fault %>
+            </p>
+
+            <p>
+                <strong>Комментарий:</strong>
+                <%= product.comment %>
+            </p>
+
+            <p>
+                <strong>Оценка:</strong>
+                <%= product.score %>
+            </p>
+        </div><br/>
+        
+    <% end %>
+
+</div>
+
+<div class="review_add_show"> 
+
+    <% if user_signed_in? %>
+
+    <h2>Добавить отзыв:</h2>
+    <%= form_with(model: [ @product, @product.reviews.build ], class: "review_form") do |form| %>
+        <p>
+            <%= form.label :degnities, "Достоинства"  %><br><br>
+            <%= form.text_area :degnities, class:"review_body"%>
+        </p>
+
+        <p>
+            <%= form.label :fault, "Недостатки"  %><br><br>
+            <%= form.text_area :fault, class:"review_body"%>
+        </p>
+
+        <p>
+            <%= form.label :comment, "Комментарий"  %><br><br>
+            <%= form.text_area :comment, class:"review_body"%>
+        </p>
+
+        <p>
+            <%= form.label :score, "Оценка (1-5)"  %>
+            <%= form.text_field :score, type:"number", :step => "0.1", min:"0", max:"5", class:"price", :required => true, :pattern => "^[0-5]{1}$"%>
+        </p>
+
+        <p>
+            <%= form.submit "Оставить отзыв", class: "btnForm"%>
+        </p>
+
+    <% end %>
+
+    <% end %>
+</div> 
+
+
+
+
+
+
+

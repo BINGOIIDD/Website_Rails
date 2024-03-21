@@ -1,0 +1,22 @@
+<h2 class="header">Отредактируйте информацию о товаре</h2>
+
+<%= form_with(model: @product, class: "new_edit_product") do |form|%>
+
+    <%= form.label :name, "Название" %>
+    <br/><br/>
+    <%= form.text_field :name, :required => true, class:"name" %>
+    <br/><br/>
+
+    <%= form.label :description, "Описание" %>
+    <br/><br/>
+    <%= form.text_area :description, :required => true, class:"area_input"%>
+    <br/><br/>
+
+    <%= form.label :price, "Цена (руб.)" %>
+    <br/><br/>
+    <%= form.text_field :price, :required => true, :type => "number", :min => "1", :pattern => "^[1-9][0-9]*$", class:"price"%>
+    <br/><br/>
+
+    <%= form.submit "Сохранить"%>
+
+<% end %>

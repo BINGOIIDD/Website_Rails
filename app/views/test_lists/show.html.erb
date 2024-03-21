@@ -1,0 +1,12 @@
+<h2><%= @test.test_name %></h2></br>
+
+<div class="links_tests">
+
+    <div class="link_admin_test">
+        <%= link_to "Изменить название", edit_test_list_path(@test) %>
+    </div>
+
+    <div class="link_admin_test">
+        <%= link_to "Изменить вопросы", admin_place_test_question_list_path(id: @test.id) %>
+    </div>
+</div>

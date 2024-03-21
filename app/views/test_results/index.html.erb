@@ -1,0 +1,39 @@
+<div class="tests_list">
+
+    <h2>Топ теста: <%= @test_list.test_name%></h2>
+
+    <ul class="ul_list_tests">
+
+        <% @results.each_with_index do |result, index| %>
+
+            <li>
+                <br/>
+                <% if index + 1 === 1 %>
+                <div class="result_num" style="background-color: #fff27d;">
+                <% elsif index + 1 === 2 %>
+                <div class="result_num" style="background-color: #e1e1e1;">
+                <% elsif index + 1 === 3 %>
+                <div class="result_num" style="background-color: #ffb082;">
+                <% else%>
+                <div class="result_num">
+                <% end %>
+                    <label><%= index + 1 %></label> 
+                </div>
+                <div class="user_name">
+                    <label><%= @users.find(result.user_id).name %></label> 
+                </div>
+                <div class="result_counter">
+                    <label><%= result.result %></label>
+                </div>
+                <% if current_user.admin? or current_user.moder? %>
+                <div class="delete_result">
+                    <%= button_to "Удалить", result, method:"delete", class: "button_delete"%>
+                </div>
+                <% end %>
+                <br/>
+            </li>
+
+        <% end %>
+
+    </ul>
+</div>

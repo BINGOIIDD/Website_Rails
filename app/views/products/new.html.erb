@@ -1,0 +1,43 @@
+<div class="new_product_div">
+
+    <h2>Хотите добавить товар? Нужно заполнить форму</h2>
+
+    <%= form_with(model: @newproduct, class: "new_edit_product") do |form|%>
+
+        <%= form.label :name, "Название" %>
+        <br/><br/>
+        <%= form.text_field :name, :required => true, class:"name"  %>
+        <% @newproduct.errors.full_messages_for(:name).each do |message| %>
+            <%= form.label :message, message%>
+        <% end %>
+        <br/><br/>
+
+        <%= form.label :description, "Описание" %>
+        <br/><br/>
+        <%= form.text_area :description, :required => true, class:"area_input"%>
+        <% @newproduct.errors.full_messages_for(:description).each do |message| %>
+            <%= form.label :message, message%>
+        <% end %>
+        <br/><br/>
+
+        <%= form.label :price, "Цена (руб.)" %>
+        <br/><br/>
+        <%= form.text_field :price, :type => "number", :min => "1", :required => true, :pattern => "^[1-9][0-9]*$", class:"price" %>
+        <% @newproduct.errors.full_messages_for(:price).each do |message| %>
+            <%= form.label :message, message%>
+        <% end %>
+        <br/><br/>
+
+        <%= form.label :category_id, "Категория"%>
+        <br/><br/>
+        <%= form.collection_select :category_id, @categories, :id, :name, multiple: true%>
+        <% @newproduct.errors.full_messages_for(:category_id).each do |message| %>
+            <%= form.label :message, message%>
+        <% end %>
+        <br/><br/>
+
+        <%= form.submit "Добавить", class: "btnForm"%>
+
+    <% end %>
+</div>
+

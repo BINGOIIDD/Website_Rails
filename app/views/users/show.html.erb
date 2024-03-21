@@ -1,0 +1,16 @@
+<div class="div_show">
+    <h1 id="h_show"><%= @user.name %></h1>
+
+    <div class="seller_label">
+        <label >Email: <%= @user.email %></label>
+    </div>
+
+    <div class="category_label">
+        <label>Роль: <%= @role.find(@user.role_id).role %></label>
+    </div>
+    
+    <div class="div_button">
+        <%= link_to "Изменить информацию", @user%>
+    </div>
+
+</div>

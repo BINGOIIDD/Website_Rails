@@ -1,0 +1,24 @@
+<div class="tests_list">
+
+    <ul class="ul_list_tests">
+
+        <% @users.each do |user| %>
+            <li>
+                <br/>
+                <div class="test_name">
+                   <label><%= user.name%></label> 
+                </div>
+                <div class="pass_test">
+                    <%= link_to "Изменить", edit_user_path(user) %>
+                </div>
+                <% if current_user.admin? %>
+                <div class="delete_test">
+                    <%= button_to "Удалить", user, method:"delete", class: "button_delete"%>
+                </div>
+                <% end %>
+                <br/>
+            </li><br/>
+        <% end %>
+
+    </ul>
+</div>

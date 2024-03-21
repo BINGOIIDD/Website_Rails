@@ -1,0 +1,20 @@
+<%= form_with(model: @user, class: "new_edit_product") do |form|%>
+
+    <%= form.label :name, "Имя" %>
+    <br/><br/>
+    <%= form.text_field :name, :required => true, class:"name_user" %>
+    <br/><br/>
+
+    <%= form.label :email, "Email" %>
+    <br/><br/>
+    <%= form.text_field :email, :required => true, class:"email_user"%>
+    <br/><br/>
+
+    <%= form.label :role_id, "Роль" %>
+    <br/><br/>
+    <%= form.collection_select :role_id, @roles, :id, :role, multiple: true, class:"role_user"%>
+    <br/><br/>
+
+    <%= form.submit "Сохранить", class: "btnForm"%>
+
+<% end %>

@@ -1,0 +1,8 @@
+<div class="new_test_name">
+    <%= form_with(model: @newtest) do |form| %>
+        <%= form.label :test_name, "Введите название теста"%></br></br>
+        <%= form.text_field :test_name, :require => true, class: "input_name"%> </br></br>
+
+        <%= form.submit "Создать", class: "btnForm"%>
+    <% end %>
+</div>

@@ -1,0 +1,1015 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+html {
+   background-repeat: repeat;
+   background-position: center center;
+   background-attachment: fixed;
+   background-size: cover;
+   text-align: center;
+}
+
+/* Строка навигации -----------------------------------------------------------*/
+
+.navbar {
+   background-color: white;
+   width: 95%;
+   height: 37px;
+   border-radius: 10px;
+   text-align: left;
+   margin: 10px;
+   filter: drop-shadow(0px 0px 10px rgba(0 0 0 / 30%));
+   padding: 10px;
+   display: inline-block;
+}
+
+.link_nav {
+   text-decoration: none;
+   font-family: Optima, sans-serif;
+   color: black;
+   padding: 10px;
+   margin-right: 10px;
+   border-radius: 10px;
+   float: left;
+}
+
+.link_nav_sign_in {
+   text-decoration: none;
+   font-family: Optima, sans-serif;
+   color: black;
+   padding: 10px;
+   margin-right: 10px;
+   border-radius: 10px;
+   float: right;
+}
+
+.account_inf {
+   background-color: white;
+   border: 1px solid black;
+   border-radius: 10px;
+   float: right;
+   padding: 3px;
+   margin-right: 5px;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.account_inf span {
+   margin-right: 10px;
+   padding: 5px;
+   font-family: Optima, sans-serif;
+}
+
+.account_inf a {
+   margin-right: 5px;
+   margin-left: 5px;
+   background: #c8c8c8;
+   color: black;
+   height: 20px;
+   padding: 5px;
+   padding-left: 10px;
+   padding-right: 10px;
+   border-radius: 8px;
+   text-decoration: none;
+   font-family: Optima, sans-serif;
+}
+
+/* Строка навигации -----------------------------------------------------------*/
+
+/* Список продуктов -----------------------------------------------------------*/
+
+.product_list {
+   background: white;
+   width: 80%;
+   overflow-y: scroll;
+   margin: auto;
+   margin-top: 20px;
+   text-align: left;
+}
+
+.product_func form {
+   display: inline-block;
+}
+
+.main_select {
+   font-family: Optima, sans-serif;
+   color: black;
+   margin-left: 10px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   height: 40px;
+   width: 170px;
+   background-color: white;
+   border: 2px solid black;
+   border-radius: 10px;
+}
+
+.but_categ {
+   font-family: Optima, sans-serif;
+   color: black;
+   width: 200px;
+   height: 40px;
+   background-color: white;
+   margin-left: 10px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   margin-right: 780px;
+   font-size: 14px;
+   border: 2px solid black;
+   border-radius: 10px;
+}
+
+.search_row {
+   top: 7px;
+   left: 850px;
+   height: 40px;
+   width: 170px;
+   background-color: white;
+   border: 2px solid black;
+   border-radius: 10px;
+}
+
+.but_search {
+   width: 110px;
+   height: 40px;
+   background-color: white;
+   font-family: Optima, sans-serif;
+   color: black;
+   font-size: 14px;
+   border: 2px solid black;
+   border-radius: 10px;
+}
+
+.ul_list_product {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.ul_list_product li {
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 30%;
+   margin: 15px;
+   list-style: none;
+   text-align: center;
+}
+
+.ul_list_product li div {
+   background: #c8c8c8;
+   border-top: 1px solid black;;
+}
+
+.ul_list_product li a {
+   text-decoration: none;
+   font-family: Optima, sans-serif;
+   color: black;
+   font-family: Optima, sans-serif;
+}
+
+/* Список продуктов -----------------------------------------------------------*/
+
+/* Информация о продукте -----------------------------------------------------------*/
+
+.div_show {
+   padding: 10px;
+   background: white;
+   width: 80%;
+   border-radius: 20px;
+   border: 2px solid black;
+   overflow-y: scroll;
+   margin: auto;
+   margin-top: 20px;
+   text-align: left;
+}
+
+.seller_label {
+   padding: 10px;
+   margin: 10px;
+   width: 47%;
+   background-color: #c8c8c8;
+   border-radius: 20px;
+   text-align: center;
+   display: inline-block;
+   font-family: Optima, sans-serif;
+}
+
+.category_label {
+   padding: 10px;
+   margin: 10px;
+   width: 47%;
+   background-color: #c8c8c8;
+   border-radius: 20px;
+   text-align: center;
+   display: inline-block;
+   font-family: Optima, sans-serif;
+}
+
+.desc_label {
+   padding: 10px;
+   margin: 10px;
+   width: 97%;
+   background-color: #c8c8c8;
+   border-radius: 20px;
+   font-family: Optima, sans-serif;
+}
+
+.price_label {
+   padding: 10px;
+   margin: auto;
+   margin-top: 20px;
+   margin-bottom: 40px;
+   width: 20%;
+   background-color: #c8c8c8;
+   border-radius: 20px;
+   text-align: center;
+   font-family: Optima, sans-serif;
+}
+
+#description_show {
+   font-size: 20px;
+   text-align: justify;
+   font-family: Optima, sans-serif;
+}
+
+#h_show {
+   background: white;
+   text-align: center;
+   font-family: Optima, sans-serif;
+}
+
+.reviews_show {
+   padding: 10px;
+   background: white;
+   width: 80%;
+   border-radius: 20px;
+   border: 2px solid black;
+   overflow-y: scroll;
+   margin: auto;
+   margin-top: 20px;
+   text-align: center;
+}
+
+.review_all {
+   border-radius: 5px;
+   text-align: left;
+   padding: 10px;
+   background-color: #c8c8c8;
+   font-family: Optima, sans-serif;
+}
+
+.review_add_show {
+   padding: 10px;
+   background: white;
+   width: 80%;
+   border-radius: 20px;
+   border: 2px solid black;
+   overflow-y: scroll;
+   margin: auto;
+   margin-top: 20px;
+   text-align: center;
+}
+
+.review_form {
+   width: 97%;
+   margin: center;
+   background: white;
+   padding: 10px 10px;
+   text-align: center;
+   font-family: Optima, sans-serif;
+}
+
+/* Информация о продукте -----------------------------------------------------------*/
+
+/* Новый продукт -----------------------------------------------------------*/
+
+.new_product_div {
+   padding: 10px;
+   background: white;
+   width: 80%;
+   border-radius: 20px;
+   border: 2px solid black;
+   overflow-y: scroll;
+   margin: auto;
+   margin-top: 20px;
+   text-align: center;
+}
+
+.new_edit_product {
+   width: 97%;
+   height: 810px;
+   background: white;
+   border-radius: 20px;
+   padding: 10px 10px;
+   text-align: center;
+}
+
+/* Новый продукт -----------------------------------------------------------*/
+
+/* Новая категория -----------------------------------------------------------*/
+
+.new_category {
+   padding: 10px;
+   background: white;
+   width: 25%;
+   border-radius: 20px;
+   border: 2px solid black;
+   overflow-y: scroll;
+   margin: auto;
+   margin-top: 20px;
+   text-align: center;
+}
+
+/* Новая категория -----------------------------------------------------------*/
+
+/* Аутентификация -----------------------------------------------------------*/
+
+.sign_in_form {
+   padding: 10px;
+   background: white;
+   width: 25%;
+   border-radius: 20px;
+   border: 2px solid black;
+   overflow-y: scroll;
+   margin: auto;
+   margin-top: 20px;
+   text-align: center;
+}
+
+.sign_in_form .field {
+   padding: 5px;
+}
+
+.sign_in_form .field label{
+   padding: 5px;
+}
+
+.sign_in_form .actions input{
+   padding: 5px;
+   border: 2px solid #836efe;
+   border-radius: 10px;
+   background: white;
+   width: 200px;
+   height: 50px;
+   font-family: Optima, sans-serif;
+   font-size: 18px;
+}
+
+.sign_in_form a {
+   background-color: #c8c8c8;
+   border-radius: 10px;
+   padding: 5px;
+   margin: 10px;
+   color: black;
+   text-decoration: none;
+}
+
+/* Аутентификация -----------------------------------------------------------*/
+
+/* Список тестов -----------------------------------------------------------*/
+
+.tests_list {
+   padding: 10px;
+   background: white;
+   width: 80%;
+   overflow-y: scroll;
+   margin: auto;
+   margin-top: 20px;
+   text-align: center;
+}
+
+.tests_func form {
+   display: inline;
+   margin-right: 960px;
+}
+
+.add_new_test_div {
+   display: inline;
+   border: 2px solid black;
+   border-radius: 10px;
+   padding: 8px;
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
+.add_new_test_div a {
+   text-decoration: none;
+   font-family: Optima, sans-serif;
+   color: black;
+}
+
+.ul_list_tests {
+   display: inline;
+   flex-wrap: wrap;
+}
+
+.ul_list_tests  li {
+   width: 99.5%;
+   margin: auto;
+   list-style: none;
+   text-align: center;
+   display: flex;
+}
+
+.test_name {
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 70%;
+   padding: 10px;
+   list-style: none;
+   text-align: center;
+   font-family: Optima, sans-serif;
+}
+
+.pass_test {
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 14%;
+   padding: 10px;
+   padding-top: 13px;
+   margin-left: 10px;
+   list-style: none;
+   text-align: center;
+   background-color: #a8a5ff;
+}
+
+.ul_list_tests  li a {
+   text-decoration: none;
+   font-family: Optima, sans-serif;
+   color: black;
+   font-family: Optima, sans-serif;
+}
+
+.top_test {
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 14%;
+   padding: 10px;
+   padding-top: 13px;
+   margin-left: 10px;
+   list-style: none;
+   text-align: center;
+   background-color: #fdc4a0;
+}
+
+.create_questions_test {
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 30.3%;
+   padding: 10px;
+   padding-top: 13px;
+   margin-left: 10px;
+   list-style: none;
+   text-align: center;
+   background-color: #cbfda0;
+}
+
+.delete_test {
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 14%;
+   padding: 10px;
+   padding-top: 13px;
+   margin-left: 10px;
+   list-style: none;
+   text-align: center;
+   background-color: #ff9292;
+}
+
+.button_delete {
+   background-color: transparent;
+   border: 0px;
+   font-family: Optima, sans-serif;
+   font-size: 16px;
+}
+
+/* Список тестов -----------------------------------------------------------*/
+
+/* Тест -----------------------------------------------------------*/
+
+.test_show {
+   padding: 10px;
+   background: white;
+   width: 80%;
+   border-radius: 20px;
+   border: 2px solid black;
+   overflow-y: scroll;
+   margin: auto;
+   margin-top: 20px;
+   text-align: center;
+}
+
+.ul_list_questions {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.ul_list_questions  li {
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 47%;
+   margin: 10px;
+   list-style: none;
+   text-align: center;
+}
+
+.ul_list_questions  li label {
+   text-decoration: none;
+   font-family: Optima, sans-serif;
+   color: black;
+   font-family: Optima, sans-serif;
+}
+
+.answers_list {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.answer_div {
+   background-color: #c8c8c8;
+   border-radius: 5px;
+   width: 46%;
+   margin: 12px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   list-style: none;
+   text-align: left;
+}
+
+.answer_contrast {
+   background-color: #c8c8c8;
+   border-radius: 5px;
+   width: 95.5%;
+   margin: 12px;
+   margin-top: 0px;
+   padding-top: 5px;
+   padding-bottom: 10px;
+   list-style: none;
+   text-align: center;
+}
+
+.answer_right {
+   background-color: #c8c8c8;
+   border-radius: 5px;
+   width: 46%;
+   margin: 12px;
+   margin-top: 0px;
+   padding-top: 5px;
+   padding-bottom: 10px;
+   list-style: none;
+   text-align: center;
+}
+
+.all_answers {
+   width: 95.5%;
+   margin: 12px;
+   margin-top: 0px;
+   padding-top: 5px;
+   padding-bottom: 10px;
+   list-style: none;
+   text-align: left;
+}
+
+.result_label {
+   display: flex;
+   background-color: #c8c8c8;
+   border-radius: 10px;
+   width: 60%;
+   height: 50px;
+   margin: auto;
+   margin-top: 10px;
+   padding-top: 5px;
+   padding-bottom: 10px;
+   list-style: none;
+   align-items: center;
+   justify-content: center;
+   font-family: Optima, sans-serif;
+}
+
+.result_label label{
+   font-size: 30px;
+}
+
+/* Тест -----------------------------------------------------------*/
+
+/* Топ тестов -----------------------------------------------------------*/
+
+.result_num {
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 3%;
+   padding: 10px;
+   padding-top: 13px;
+   margin-left: 10px;
+   margin-bottom: 10px;
+   list-style: none;
+   text-align: center;
+}
+
+.user_name {
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 80%;
+   padding: 10px;
+   padding-top: 13px;
+   margin-left: 10px;
+   margin-bottom: 10px;
+   list-style: none;
+   text-align: center;
+}
+
+.result_counter {
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 15%;
+   padding: 10px;
+   padding-top: 13px;
+   margin-left: 10px;
+   margin-bottom: 10px;
+   list-style: none;
+   text-align: center;
+}
+
+/* Топ тестов -----------------------------------------------------------*/
+
+/* Новые тесты -----------------------------------------------------------*/
+
+.new_test_name {
+   padding: 10px;
+   width: 30%;
+   border-radius: 20px;
+   border: 2px solid black;
+   margin: auto;
+   margin-top: 20px;
+   text-align: center;
+}
+
+.new_test_name label {
+   font-family: Optima, sans-serif;
+   font-size: 30px;
+}
+
+.input_name {
+   width: 50%;
+   font-size: 20px;
+}
+
+/* Новые тесты -----------------------------------------------------------*/
+
+/* Новые вопросы -----------------------------------------------------------*/
+
+.create_question_input {
+   font-family: Optima, sans-serif;
+   font-size: 16px;
+   width: 450px;
+}
+
+.answer_text {
+   margin-top: 5px;
+   font-family: Optima, sans-serif;
+   font-size: 16px;
+   width: 260px;
+}
+
+.ul_list_questions_new {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.ul_list_questions_new  li {
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 47%;
+   height: 330px;
+   margin: 10px;
+   list-style: none;
+   text-align: center;
+}
+
+.ul_list_questions_new  li label {
+   text-decoration: none;
+   font-family: Optima, sans-serif;
+   color: black;
+   font-family: Optima, sans-serif;
+}
+
+.answer_list_div {
+   background-color: #c8c8c8;
+   border-radius: 5px;
+   width: 96%;
+   margin: 12px;
+   padding-top: 5px;
+   padding-bottom: 10px;
+   list-style: none;
+   text-align: left;
+}
+
+/* Новые вопросы -----------------------------------------------------------*/
+
+/* Админ -----------------------------------------------------------*/
+
+.link_list {
+   background: white;
+   overflow-y: scroll;
+   width: 31%;
+   margin: auto;
+   margin-top: 20px;
+   padding: 20px;
+   text-align: left;
+   display: flex;
+}
+
+.user_path {
+   display: inline;
+   border: 2px solid black;
+   border-radius: 10px;
+   padding: 8px;
+   padding-left: 20px;
+   padding-right: 20px;
+   margin-right: 10px;
+}
+
+.user_path a {
+   text-decoration: none;
+   font-family: Optima, sans-serif;
+   color: black;
+}
+
+.delete_non_test {
+   pointer-events: none;
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 14%;
+   padding: 10px;
+   padding-top: 13px;
+   margin-left: 10px;
+   list-style: none;
+   text-align: center;
+   background-color: #ff9292;
+   opacity: 0.65;
+}
+
+.warning {
+   display: flex;
+   width: 20%;
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+}
+
+.warning label {
+   font-family: Optima, sans-serif;
+   font-size: 14px;
+}
+
+.ul_list_category {
+   display: inline;
+   flex-wrap: wrap;
+}
+
+.ul_list_category  li {
+   width: 99.5%;
+   margin: auto;
+   list-style: none;
+   text-align: center;
+   display: flex;
+}
+
+.ul_list_category  li div{
+   width: 33.3%;
+   flex-wrap: wrap;
+}
+
+.ul_list_category  li a {
+   text-decoration: none;
+   font-family: Optima, sans-serif;
+   color: black;
+   font-family: Optima, sans-serif;
+}
+
+.category_name {
+   border: 1px solid black;
+   border-radius: 5px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.category_name label {
+   font-family: Optima, sans-serif;
+   font-size: 14px;
+}
+
+.delete_result {
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 14%;
+   height: 25px;
+   padding: 10px;
+   padding-top: 13px;
+   margin-left: 10px;
+   list-style: none;
+   text-align: center;
+   background-color: #ff9292;
+}
+
+.links_tests {
+   background: white;
+   width: 40%;
+   overflow-y: scroll;
+   margin: auto;
+   margin-top: 20px;
+   padding: 20px;
+   text-align: left;
+   display: flex;
+}
+
+.link_admin_test {
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 48%;
+   height: 25px;
+   padding: 10px;
+   padding-top: 13px;
+   margin-left: 10px;
+   list-style: none;
+   text-align: center;
+   background-color: #d5ff92;
+}
+
+.link_admin_test a {
+   text-decoration: none;
+   font-family: Optima, sans-serif;
+   color: black;
+}
+
+.link_admin_test_question {
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 93%;
+   height: 25px;
+   padding: 10px;
+   padding-top: 13px;
+   margin: 10px;
+   list-style: none;
+   text-align: center;
+   background-color: #abf4ff;
+}
+
+.link_admin_test_question a {
+   padding-left: 270px;
+   padding-right: 270px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   text-decoration: none;
+   font-family: Optima, sans-serif;
+   color: black;
+}
+
+.name_user {
+   font-family: Optima, sans-serif;
+   font-size: 30px;
+}
+
+.email_user {
+   font-family: Optima, sans-serif;
+   font-size: 30px;
+}
+
+.role_user {
+   font-family: Optima, sans-serif;
+   color: black;
+   margin-left: 10px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   height: 40px;
+   width: 170px;
+   background-color: white;
+   border: 2px solid black;
+   border-radius: 10px;
+}
+
+/* Админ -----------------------------------------------------------*/
+
+.area_input {
+   resize: none;
+   font-size: 14px;
+   border: 1px solid;
+   border-radius: 10px;
+   width: 90%;
+   height: 400px;
+   font-size: 14px;
+}
+
+.name {
+   width: 90%;
+   height: 30px;
+}
+
+.price {
+   height: 30px;
+}
+
+label {
+   font-size: 20px;
+}
+
+.btnForm {
+   width: 300px;
+   height: 60px;
+   border: 2px solid black;
+   margin: auto;
+   font-size: 30px;
+   color: black;
+   cursor: pointer;
+   border-radius: 10px;
+   background: white;
+}
+
+.div_button {
+   border: 2px solid black;
+   border-radius: 10px;
+   padding: 10px;
+   cursor: pointer;
+   text-align: center;
+}
+
+.div_button a{
+   font-size: 30px;
+   color: black;
+   text-decoration: none;
+}
+
+
+
+.back_to_main {
+   background-color: white;
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   width: 100%;
+   height: 50px;
+   text-align: center;
+}
+
+
+
+.new_button {
+   background: white;
+   border: 5px solid #4e4eff7c;
+   width: 30%;
+   border-radius: 5px;
+   padding: 10px 10px 10px 10px;
+   text-align: center;
+   font-size: 20px;
+}
+
+.button_to input {
+   width: 100%;
+}
+
+.have_product_header {
+   position: absolute;
+   left: 920px;
+   top: 0px;
+}
+
+.review_body {
+   resize: none;
+   font-size: 14px;
+   border: 1px solid;
+   border-radius: 10px;
+   width: 90%;
+   height: 100px;
+   font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+.pagin {
+   text-align: center;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+
+

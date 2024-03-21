@@ -1,0 +1,51 @@
+<div class="test_show">
+
+    <h1><%= @test.test_name %></h1>
+
+    <div class="seller_label">
+        <label >Создатель теста: <%= @users.find(@test.user_id).name %></label>
+    </div>
+
+    <%= form_with(model: @newresult) do |form|%>
+        <ul class="ul_list_questions">
+            <% array_questions = ["question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10"]%>
+            <% @test_list.each_with_index do |question, question_index| %>
+                <% array_answers = [question.answers_list_1, question.answers_list_2, question.answers_list_3, question.answers_list_4]%>
+                <% rand_answers = array_answers.sort_by {rand} %>
+                <li>
+                    <br/>
+                    <label><%= question.question %></label><br/>
+                    <br/>
+
+                    <div class="answers_list">
+                        <div class="answer_div">
+                            <%= form.radio_button array_questions[question_index], rand_answers[0]%>
+                            <%= form.label rand_answers[0]%>
+                        </div></br>
+
+                        <div class="answer_div">
+                            <%= form.radio_button array_questions[question_index], rand_answers[1]%>
+                            <%= form.label rand_answers[1]%>
+                        </div></br>
+
+                        <div class="answer_div">
+                            <%= form.radio_button array_questions[question_index], rand_answers[2]%>
+                            <%= form.label rand_answers[2]%>
+                        </div></br>
+
+                        <div class="answer_div">
+                            <%= form.radio_button array_questions[question_index], rand_answers[3]%>
+                            <%= form.label rand_answers[3]%>
+                        </div></br>
+                    </div>
+                </li>
+
+            <% end %>
+        </ul>
+
+        <%= form.hidden_field :test_list_id, value: @test.id%>
+
+        <%= form.submit "Ответить", class: "btnForm"%>
+    <% end %>
+
+</div>

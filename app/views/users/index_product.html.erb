@@ -1,0 +1,20 @@
+<div class="product_list">
+
+    <ul class="ul_list_product">
+
+        <% @product.each do |product| %>
+
+            <li>
+                <br/>
+                <%= link_to product.name, product %><br/>
+                <br/>
+                <div> <%= label :desc, product.price%> <label> рублей</label></div>
+            </li><br/>
+
+        <% end %>
+
+    </ul>
+    <div class="pagin">
+        <%= will_paginate @product, :previous_label => "Назад", :next_label => "Вперёд" %>
+    </div>
+</div>

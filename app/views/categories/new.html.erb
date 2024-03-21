@@ -1,0 +1,16 @@
+<%= form_with(model: @category, class: "new_category") do |form| %>
+    
+    <br/><br/>
+    <%= form.label :name, "Наименование"%>
+    <br/><br/>
+    <%= form.text_field :name, :required => true %>
+    <% @category.errors.full_messages_for(:description).each do |message| %>
+        <%= form.label :message, message%>
+    <% end %>
+    <br/><br/><br/><br/>
+
+    <%= form.submit "Создать категорию", class: "btnForm"%>
+
+    <br/><br/>
+
+<% end %>

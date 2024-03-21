@@ -1,0 +1,43 @@
+<div class="test_show">
+
+    <h1><%= @test.test_name %></h1>
+
+    <ul class="ul_list_questions">
+        <% @questions.each do |question| %>
+
+            <li>
+                <br/>
+                <label><%= question.question%></label><br/>
+                <br/>
+
+                <div class="answers_list">
+                    <div class="answer_list_div">
+                        <label><%= question.answers_list_1 %></label> 
+                    </div></br>
+
+                    <div class="answer_list_div">
+                        <label><%= question.answers_list_2 %></label> 
+                    </div></br>
+
+                    <div class="answer_list_div">
+                        <label><%= question.answers_list_3 %></label> 
+                    </div></br>
+
+                    <div class="answer_list_div">
+                        <label><%= question.answers_list_4 %></label> 
+                    </div></br>
+
+                    <div class="answer_list_div">
+                        <label>Ответ: <%= question.answer %></label> 
+                    </div></br>
+
+                    <div class="link_admin_test_question">
+                        <%= link_to "Изменить", edit_test_question_path(question) %>
+                    </div>
+                </div>
+            </li>
+
+        <% end %>
+    </ul>
+
+</div>

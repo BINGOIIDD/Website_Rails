@@ -1,0 +1,177 @@
+<div class="test_show">
+
+    <h1><%= @test.test_name %></h1>
+
+    <div class="seller_label">
+        <label >Создатель теста: <%= @users.find(@test.user_id).name %></label>
+    </div>
+    
+    <div class="result_label">
+        <label>Процент правильных ответов: <%= @result.result %> % </label>
+    </div>
+
+    <ul class="ul_list_questions">
+
+        <% @test_list.each_with_index do |question, question_index| %>
+
+            <li>
+                <br/>
+                <label><%= question.question %></label><br/>
+                <br/>
+
+                <div class="answers_list ">
+                    
+                    <div class="all_answers">
+                        <label>1. <%= question.answers_list_1 %></label><br>
+                        <label>2. <%= question.answers_list_2 %></label><br>
+                        <label>3. <%= question.answers_list_3 %></label><br>
+                        <label>4. <%= question.answers_list_4 %></label><br>
+                    </div>
+
+                    <div class="answer_right">
+                       <label>Правильный ответ: <%= question.answer %></label>
+                    </div>
+
+                    <% case question_index %>
+                    <% when 0 %> 
+                        <div class="answer_right">
+                            <label>Ваш ответ: <%= @result.question1 %></label>
+                        </div></br>
+                        <% if @result.question1 === question.answer %>
+                            <div class="answer_contrast", style="background-color: #a8ffb4;">
+                                <label>Правильно!</label>
+                            </div>
+                        <% else %>
+                            <div class="answer_contrast", style="background-color: #ff7777;">
+                                <label>Неправильно!</label>
+                            </div>
+                        <% end %>
+                    <% when 1 %> 
+                        <div class="answer_right">
+                            <label>Ваш ответ: <%= @result.question2 %></label>
+                        </div></br>
+                        <% if @result.question2 === question.answer %>
+                            <div class="answer_contrast", style="background-color: #a8ffb4;">
+                                <label>Правильно!</label>
+                            </div>
+                        <% else %>
+                            <div class="answer_contrast", style="background-color: #ff7777;">
+                                <label>Неправильно!</label>
+                            </div>
+                        <% end %>
+                    <% when 2 %> 
+                        <div class="answer_right">
+                            <label>Ваш ответ: <%= @result.question3 %></label>
+                        </div></br>
+                        <% if @result.question3 === question.answer %>
+                            <div class="answer_contrast", style="background-color: #a8ffb4;">
+                                <label>Правильно!</label>
+                            </div>
+                        <% else %>
+                            <div class="answer_contrast", style="background-color: #ff7777;">
+                                <label>Неправильно!</label>
+                            </div>
+                        <% end %>
+                    <% when 3 %> 
+                        <div class="answer_right">
+                            <label>Ваш ответ: <%= @result.question4 %></label>
+                        </div></br>
+                        <% if @result.question4 === question.answer %>
+                            <div class="answer_contrast", style="background-color: #a8ffb4;">
+                                <label>Правильно!</label>
+                            </div>
+                        <% else %>
+                            <div class="answer_contrast", style="background-color: #ff7777;">
+                                <label>Неправильно!</label>
+                            </div>
+                        <% end %>
+                    <% when 4 %> 
+                        <div class="answer_right">
+                            <label>Ваш ответ: <%= @result.question5 %></label>
+                        </div></br>
+                        <% if @result.question5 === question.answer %>
+                            <div class="answer_contrast", style="background-color: #a8ffb4;">
+                                <label>Правильно!</label>
+                            </div>
+                        <% else %>
+                            <div class="answer_contrast", style="background-color: #ff7777;">
+                                <label>Неправильно!</label>
+                            </div>
+                        <% end %>
+                    <% when 5 %> 
+                        <div class="answer_right">
+                            <label>Ваш ответ: <%= @result.question6 %></label>
+                        </div></br>
+                        <% if @result.question6 === question.answer %>
+                            <div class="answer_contrast", style="background-color: #a8ffb4;">
+                                <label>Правильно!</label>
+                            </div>
+                        <% else %>
+                            <div class="answer_contrast", style="background-color: #ff7777;">
+                                <label>Неправильно!</label>
+                            </div>
+                        <% end %>
+                    <% when 6 %> 
+                        <div class="answer_right">
+                            <label>Ваш ответ: <%= @result.question7 %></label>
+                        </div></br>
+                        <% if @result.question7 === question.answer %>
+                            <div class="answer_contrast", style="background-color: #a8ffb4;">
+                                <label>Правильно!</label>
+                            </div>
+                        <% else %>
+                            <div class="answer_contrast", style="background-color: #ff7777;">
+                                <label>Неправильно!</label>
+                            </div>
+                        <% end %>
+                    <% when 7 %>
+                        <div class="answer_right">
+                            <label>Ваш ответ: <%= @result.question8 %></label>
+                        </div></br>
+                        <% if @result.question8 === question.answer %>
+                            <div class="answer_contrast", style="background-color: #a8ffb4;">
+                                <label>Правильно!</label>
+                            </div>
+                        <% else %>
+                            <div class="answer_contrast", style="background-color: #ff7777;">
+                                <label>Неправильно!</label>
+                            </div>
+                        <% end %>
+                    <% when 8 %> 
+                        <div class="answer_right">
+                            <label>Ваш ответ: <%= @result.question9 %></label>
+                        </div></br>
+                        <% if @result.question9 === question.answer %>
+                            <div class="answer_contrast", style="background-color: #a8ffb4;">
+                                <label>Правильно!</label>
+                            </div>
+                        <% else %>
+                            <div class="answer_contrast", style="background-color: #ff7777;">
+                                <label>Неправильно!</label>
+                            </div>
+                        <% end %>
+                    <% when 9 %> 
+                        <div class="answer_right">
+                            <label>Ваш ответ: <%= @result.question10 %></label>
+                        </div></br>
+                            <% if @result.question10 === question.answer %>
+                                <div class="answer_contrast", style="background-color: #a8ffb4;">
+                                    <label>Правильно!</label>
+                                </div>
+                            <% else %>
+                                <div class="answer_contrast", style="background-color: #ff7777;">
+                                    <label>Неправильно!</label>
+                                </div>
+                            <% end %>
+                        </div>
+                    <% end %> 
+                    
+                </div>
+
+            </li>
+
+        <% end %>
+        
+    </ul>
+
+</div>

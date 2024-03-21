@@ -1,0 +1,34 @@
+<div class="reviews_show">
+
+    <% @review.each do |review| %>
+
+        <div class="review_all">
+            <p>
+                <strong>Товар:</strong>
+                <%= link_to @product.find(review.product_id).name, @product.find(review.product_id) %>
+            </p>
+            <p>
+                <strong>Достоинства:</strong>
+                <%= review.degnities %>
+            </p>
+            <p>
+                <strong>Недостатки:</strong>
+                <%= review.fault %>
+            </p>
+            <p>
+                <strong>Комментарий:</strong>
+                <%= review.comment %>
+            </p>
+            <p>
+                <strong>Оценка:</strong>
+                <%= review.score %>
+            </p>
+        </div>
+
+    <% end %>
+
+    <div class="pagin">
+        <%= will_paginate @review, :previous_label => "Назад", :next_label => "Вперёд" %>
+    </div>
+</div>
+
